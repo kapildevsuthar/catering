@@ -38,6 +38,12 @@ function DB($table, $pk='id'){
        $sql="select $cols from $this->table order by $order ";
       return $this->query($sql)?->fetch_all(MYSQLI_ASSOC);
      }
+
+     public function find($id,$cols="*"){
+        $sql="select $cols from $this->table where $this->pk=$id";
+        return $this->query($sql)?->fetch_assoc();
+     }
+
      public function delete($ids){
       $sql="delete from $this->table where $this->pk in($ids)";
       return $this->query($sql);

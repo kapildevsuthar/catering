@@ -28,7 +28,7 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
         for(let i=0;i<=all.length;i++){
             all[i].checked=allobj.checked;
         }
-        ditem.style.display=allobj.checked?"":'none';
+        // ditem.style.display=allobj.checked?"":'none';
     }
 
 

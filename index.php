@@ -1,14 +1,18 @@
 <?php 
+require_once "helper/session.php";
+Session::init();
 define('ROOT','http://localhost/batch7am/event/');
 require_once "helper/DB.php";
 require_once "helper/redirect.php";
 $module="booking";
 $file="index";
+$uid=null;
 $url=$_GET['url']??null;
 if($url){
     $url=explode('/',rtrim($url,'/'));
-    $module=$url[0];
-    $file=$url[1]??$file;
+    $module = $url[0];
+    $file = $url[1] ?? $file;
+    $uid = $url[2] ?? null;
 }
 $path="modules/$module/$file.php";
 if(file_exists($path)){
